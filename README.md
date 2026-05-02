@@ -67,6 +67,5 @@ Visit `http://localhost:3000`.
 
 ## Deployment Notes
 
-- Deploy on Vercel/Render.
-- Make sure all environment variables are configured in deployment settings.
-- App Router handles route reload safely without route-level refresh errors.
+- Deploy on Vercel
+
