@@ -25,7 +25,7 @@ const slides = [
     title: "Your next skill is one click away",
     subtitle: "Learn at your own pace, seriously",
     note: "No deadlines. No pressure. Just good content you can come back to anytime.",
-    lottieUrl: "https://assets2.lottiefiles.com/packages/lf20_kkflmtur.json",
+    lottieUrl: "https://assets9.lottiefiles.com/packages/lf20_tno6cg2w.json",
     bgImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=80&fit=crop",
   },
 ];
