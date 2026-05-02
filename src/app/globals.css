@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "animate.css";
 
 :root {
   --background: #e7f6ff;

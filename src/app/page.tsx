@@ -38,7 +38,7 @@ export default function Home() {
     <section className="mx-auto w-full max-w-7xl space-y-16 px-4 py-8 md:px-8 md:py-12">
       <HeroSlider />
 
-      <section>
+      <section className="animate__animated animate__fadeInUp">
         <div className="mb-6 flex items-center justify-between">
           <h2 className="font-display text-3xl font-bold text-slate-900">Popular right now</h2>
           <Link href="/courses" className="text-sm font-semibold text-brand hover:underline">
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
+      <section className="animate__animated animate__fadeInUp animate__delay-1s grid gap-8 lg:grid-cols-2">
         <div className="rounded-3xl border border-white/55 bg-white/80 p-6 shadow-xl">
           <h3 className="font-display text-2xl font-bold text-slate-900">Tips that actually help</h3>
           <p className="mt-2 text-sm text-slate-600">A few things I wish someone told me earlier.</p>
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="animate__animated animate__fadeInUp animate__delay-2s">
         <h2 className="font-display text-3xl font-bold text-slate-900">Trending this week</h2>
         <p className="mt-2 text-slate-600">Courses people are picking up lately.</p>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
