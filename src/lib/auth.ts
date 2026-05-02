@@ -1,4 +1,5 @@
 import { betterAuth } from "better-auth";
+import { getMigrations } from "better-auth/db/migration";
 import Database from "better-sqlite3";
 import path from "path";
 import os from "os";
@@ -29,3 +30,8 @@ export const auth = betterAuth({
       : {}),
   },
 });
+
+// Auto-run migrations so the DB schema exists on first use (needed on Vercel /tmp)
+getMigrations(auth.options)
+  .then(({ runMigrations }) => runMigrations())
+  .catch(() => {});
