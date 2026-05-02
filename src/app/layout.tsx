@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { ConditionalShell } from "@/components/conditional-shell";
 import { Providers } from "@/components/providers";
 
 const spaceGrotesk = Space_Grotesk({
@@ -32,9 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-app text-app-foreground">
         <Providers>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ConditionalShell>{children}</ConditionalShell>
         </Providers>
       </body>
     </html>
