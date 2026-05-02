@@ -49,12 +49,14 @@ export function UpdateProfileForm({
       </label>
 
       <label className="block">
-        <span className="mb-1 block text-sm font-medium text-slate-700">Image URL</span>
+        <span className="mb-1 block text-sm font-medium text-slate-700">
+          Photo URL <span className="text-xs text-slate-400 font-normal">(optional)</span>
+        </span>
         <input
           type="url"
-          required
           value={image}
           onChange={(event) => setImage(event.target.value)}
+          placeholder="https://..."
           className="input input-bordered w-full border-slate-300 bg-white"
         />
       </label>
