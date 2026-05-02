@@ -11,7 +11,6 @@ export default function RegisterPage() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [image, setImage] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +21,6 @@ export default function RegisterPage() {
     const { error } = await authClient.signUp.email({
       name,
       email,
-      image,
       password,
       callbackURL: "/login",
     });
@@ -70,18 +68,6 @@ export default function RegisterPage() {
               onChange={(event) => setEmail(event.target.value)}
               className="input input-bordered w-full border-slate-300 bg-white"
               placeholder="you@example.com"
-            />
-          </label>
-
-          <label className="block">
-            <span className="mb-1 block text-sm font-medium text-slate-700">Photo URL</span>
-            <input
-              type="url"
-              required
-              value={image}
-              onChange={(event) => setImage(event.target.value)}
-              className="input input-bordered w-full border-slate-300 bg-white"
-              placeholder="https://..."
             />
           </label>
 
