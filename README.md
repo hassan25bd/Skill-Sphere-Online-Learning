@@ -4,9 +4,7 @@ SkillSphere is a modern online learning platform where users can explore courses
 
 ## Live URL
 
-Add your deployed link here after deployment:
-
-- https://your-skillsphere-live-url.vercel.app
+https://skillsphere-online-learning-live.vercel.app
 
 ## Purpose
 

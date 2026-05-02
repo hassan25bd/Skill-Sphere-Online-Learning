@@ -17,7 +17,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: "SkillSphere",
-  description: "A modern online learning platform for skill-based programs.",
+  description: "Online courses for web dev, design, marketing and more. Learn at your own pace.",
 };
 
 export default function RootLayout({

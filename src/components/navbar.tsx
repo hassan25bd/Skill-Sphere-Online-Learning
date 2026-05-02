@@ -34,7 +34,7 @@ export function Navbar() {
           </span>
           <div>
             <p className="font-display text-xl font-bold leading-none text-slate-900">SkillSphere</p>
-            <p className="text-xs text-slate-500">Learn. Build. Launch.</p>
+            <p className="text-xs text-slate-500">learn something useful today</p>
           </div>
         </Link>
 
