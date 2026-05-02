@@ -12,31 +12,47 @@ const learningTips = [
 
 const topInstructors = [
   {
-    name: "John Doe",
+    name: "Marcus Chen",
     specialty: "Web development (front + back)",
-    avatar: "https://api.dicebear.com/9.x/personas/png?seed=JohnDoe&size=80",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&fit=crop&crop=face",
   },
   {
     name: "Sarah Khan",
     specialty: "UX design & Figma",
-    avatar: "https://api.dicebear.com/9.x/personas/png?seed=SarahKhan&size=80",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&fit=crop&crop=face",
   },
   {
     name: "Alex Rivera",
     specialty: "Digital marketing",
-    avatar: "https://api.dicebear.com/9.x/personas/png?seed=AlexRivera&size=80",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&fit=crop&crop=face",
   },
   {
     name: "Priya Nair",
     specialty: "SQL & data analysis",
-    avatar: "https://api.dicebear.com/9.x/personas/png?seed=PriyaNair&size=80",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&q=80&fit=crop&crop=face",
   },
+];
+
+const stats = [
+  { value: "2,400+", label: "Students enrolled" },
+  { value: "6", label: "Courses available" },
+  { value: "5", label: "Expert instructors" },
+  { value: "4.7 ★", label: "Average rating" },
 ];
 
 export default function Home() {
   return (
     <section className="mx-auto w-full max-w-7xl space-y-16 px-4 py-8 md:px-8 md:py-12">
       <HeroSlider />
+
+      <section className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {stats.map((stat) => (
+          <div key={stat.label} className="rounded-2xl border border-white/55 bg-white/80 p-5 text-center shadow-md">
+            <p className="font-display text-3xl font-extrabold text-brand">{stat.value}</p>
+            <p className="mt-1 text-sm text-slate-600">{stat.label}</p>
+          </div>
+        ))}
+      </section>
 
       <section className="animate__animated animate__fadeInUp">
         <div className="mb-6 flex items-center justify-between">

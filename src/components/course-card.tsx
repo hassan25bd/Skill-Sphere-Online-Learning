@@ -19,12 +19,18 @@ export function CourseCard({ course, index = 0 }: { course: Course; index?: numb
         <Image src={course.image} alt={course.title} fill className="object-cover" />
       </div>
       <div className="space-y-2 p-5">
-        <p className="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700">
+        <p className="inline-block rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700">
           {course.category}
         </p>
         <h3 className="line-clamp-2 text-lg font-bold text-slate-900">{course.title}</h3>
-        <p className="text-sm text-slate-600">Instructor: {course.instructor}</p>
-        <p className="text-sm font-semibold text-amber-600">Rating: {course.rating}</p>
+        <p className="text-sm text-slate-600">by {course.instructor}</p>
+        <div className="flex items-center justify-between">
+          <p className="text-xs text-slate-500">{course.duration}</p>
+          <p className="flex items-center gap-1 text-sm font-semibold text-amber-500">
+            {"★".repeat(Math.floor(course.rating))}{"☆".repeat(5 - Math.floor(course.rating))}
+            <span className="ml-1 text-slate-600">{course.rating}</span>
+          </p>
+        </div>
         <div className="pt-2">
           <Link href={`/courses/${course.id}`} className="btn btn-sm bg-brand text-white hover:bg-brand-dark">
             View Details
