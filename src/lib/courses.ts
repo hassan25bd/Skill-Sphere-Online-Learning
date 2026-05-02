@@ -68,7 +68,7 @@ export const courses: Course[] = [
     level: "Advanced",
     description:
       "After Effects fundamentals focused on social content — reels, intros, transitions. You'll need some video editing experience first.",
-    image: "https://images.unsplash.com/photo-1536240478700-b869ad10a2eb?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80&fit=crop",
     category: "Design",
   },
   {
