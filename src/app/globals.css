@@ -3,8 +3,8 @@
 @import "animate.css";
 
 :root {
-  --background: #f4f1fe;
-  --foreground: #1a1135;
+  --background: #e7f6ff;
+  --foreground: #0f2434;
 }
 
 @theme inline {
@@ -14,17 +14,17 @@
   --font-display: var(--font-fraunces);
   --color-app: var(--background);
   --color-app-foreground: var(--foreground);
-  --color-brand: #5b21b6;
-  --color-brand-dark: #4c1d95;
+  --color-brand: #0c7ca8;
+  --color-brand-dark: #0a5f81;
 }
 
 body {
   color: var(--foreground);
   font-family: var(--font-space-grotesk), sans-serif;
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.18), transparent 28%),
-    radial-gradient(circle at 85% 12%, rgba(109, 40, 217, 0.14), transparent 26%),
-    linear-gradient(180deg, #ede9fe 0%, #f4f1fe 45%, #faf8ff 100%);
+    radial-gradient(circle at 15% 20%, rgba(54, 162, 207, 0.22), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(11, 107, 151, 0.18), transparent 26%),
+    linear-gradient(180deg, #dff4ff 0%, #ecfbff 45%, #f5fdff 100%);
 }
 
 .font-display {

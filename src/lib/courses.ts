@@ -14,13 +14,13 @@ export const courses: Course[] = [
   {
     id: 1,
     title: "Complete Web Development Bootcamp",
-    instructor: "Marcus Chen",
+    instructor: "John Doe",
     duration: "20 hours",
     rating: 4.9,
     level: "Beginner",
     description:
       "Covers HTML, CSS, JavaScript, React and a basic Node backend. Good starting point if you've never built a website before.",
-    image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&fit=crop",
     category: "Development",
   },
   {
@@ -32,7 +32,7 @@ export const courses: Course[] = [
     level: "Beginner",
     description:
       "Learn how to wireframe, prototype, and think from a user's perspective. Figma is used throughout the course.",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80&fit=crop",
     category: "Design",
   },
   {
@@ -44,7 +44,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "SEO, paid ads, content strategy and email marketing all in one place. Practical and not overly theoretical.",
-    image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&fit=crop",
     category: "Marketing",
   },
   {
@@ -56,7 +56,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "Write real SQL queries, build dashboards in Power BI, and actually understand what the data is telling you.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80&fit=crop",
     category: "Analytics",
   },
   {
@@ -68,7 +68,7 @@ export const courses: Course[] = [
     level: "Advanced",
     description:
       "After Effects fundamentals focused on social content — reels, intros, transitions. You'll need some video editing experience first.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80&fit=crop",
     category: "Design",
   },
   {
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "How PMs actually work day to day — user research, writing specs, working with engineers, and prioritizing features without losing your mind.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80&fit=crop",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&fit=crop",
     category: "Business",
   },
 ];
