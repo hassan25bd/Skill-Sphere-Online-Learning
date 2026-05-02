@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 import clsx from "clsx";
@@ -35,33 +36,50 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/45 bg-white/70 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-8">
 
-        {/* Logo */}
+        {/* Animated Logo */}
         <Link href="/" className="group flex items-center gap-2">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand text-white shadow-md shadow-sky-700/30 transition-transform group-hover:rotate-6 font-bold text-sm">
-            SS
-          </span>
-          <div>
+          <motion.span
+            className="grid h-10 w-10 place-items-center rounded-xl bg-brand text-white shadow-md shadow-sky-700/30 font-bold text-sm select-none"
+            whileHover={{ rotate: 15, scale: 1.12 }}
+            whileTap={{ scale: 0.93 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+          >
+            <motion.svg viewBox="0 0 36 36" className="h-6 w-6" fill="none">
+              <motion.circle cx="18" cy="18" r="16" stroke="white" strokeWidth="2.5" strokeDasharray="100" strokeDashoffset="100"
+                animate={{ strokeDashoffset: 0 }} transition={{ duration: 1.2, ease: "easeOut" }} />
+              <motion.path d="M11 18l5 5 9-9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }} />
+            </motion.svg>
+          </motion.span>
+          <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
             <p className="font-display text-xl font-bold leading-none text-slate-900">SkillSphere</p>
             <p className="text-xs text-slate-500 hidden sm:block">learn something useful today</p>
-          </div>
+          </motion.div>
         </Link>
 
         {/* Desktop nav links */}
         <ul className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+          {navLinks.map((link, i) => (
+            <motion.li key={link.href}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.08, duration: 0.35 }}
+            >
               <Link
                 href={link.href}
                 className={clsx(
-                  "rounded-full px-4 py-2 text-sm font-semibold transition",
+                  "relative rounded-full px-4 py-2 text-sm font-semibold transition",
                   pathname === link.href
                     ? "bg-brand text-white"
                     : "text-slate-700 hover:bg-sky-50"
                 )}
               >
                 {link.label}
+                {pathname === link.href && (
+                  <motion.span layoutId="nav-pill" className="absolute inset-0 rounded-full bg-brand -z-10" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+                )}
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
@@ -120,50 +138,62 @@ export function Navbar() {
       </nav>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-white/45 bg-white/95 backdrop-blur-xl px-4 pb-4 pt-2 space-y-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={clsx(
-                "block rounded-xl px-4 py-2.5 text-sm font-semibold transition",
-                pathname === link.href ? "bg-brand text-white" : "text-slate-700 hover:bg-sky-50"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="pt-2 border-t border-slate-100">
-            {isPending ? null : session?.user ? (
-              <div className="space-y-1">
-                <div className="flex items-center gap-3 px-4 py-2">
-                  <Image
-                    src={session.user.image || `https://api.dicebear.com/9.x/personas/png?seed=${encodeURIComponent(session.user.email)}&size=36`}
-                    alt={session.user.name || "User"}
-                    width={36}
-                    height={36}
-                    className="h-9 w-9 rounded-full border border-slate-200 object-cover"
-                  />
-                  <span className="text-sm font-semibold text-slate-800 truncate">{session.user.name || session.user.email}</span>
-                </div>
-                <button
-                  onClick={handleLogout}
-                  className="block w-full rounded-xl px-4 py-2.5 text-left text-sm font-semibold text-red-500 hover:bg-red-50 transition"
-                >
-                  Logout
-                </button>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden overflow-hidden border-t border-white/45 bg-white/95 backdrop-blur-xl"
+          >
+            <div className="px-4 pb-4 pt-2 space-y-1">
+              {navLinks.map((link, i) => (
+                <motion.div key={link.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06 }}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={clsx(
+                      "block rounded-xl px-4 py-2.5 text-sm font-semibold transition",
+                      pathname === link.href ? "bg-brand text-white" : "text-slate-700 hover:bg-sky-50"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="pt-2 border-t border-slate-100">
+                {isPending ? null : session?.user ? (
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-3 px-4 py-2">
+                      <Image
+                        src={session.user.image || `https://api.dicebear.com/9.x/personas/png?seed=${encodeURIComponent(session.user.email)}&size=36`}
+                        alt={session.user.name || "User"}
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 rounded-full border border-slate-200 object-cover"
+                      />
+                      <span className="text-sm font-semibold text-slate-800 truncate">{session.user.name || session.user.email}</span>
+                    </div>
+                    <button
+                      onClick={handleLogout}
+                      className="block w-full rounded-xl px-4 py-2.5 text-left text-sm font-semibold text-red-500 hover:bg-red-50 transition"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex gap-2 px-2">
+                    <Link href="/login" onClick={() => setMobileOpen(false)} className="btn btn-sm btn-ghost flex-1">Login</Link>
+                    <Link href="/register" onClick={() => setMobileOpen(false)} className="btn btn-sm bg-brand text-white hover:bg-brand-dark flex-1">Register</Link>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="flex gap-2 px-2">
-                <Link href="/login" onClick={() => setMobileOpen(false)} className="btn btn-sm btn-ghost flex-1">Login</Link>
-                <Link href="/register" onClick={() => setMobileOpen(false)} className="btn btn-sm bg-brand text-white hover:bg-brand-dark flex-1">Register</Link>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
