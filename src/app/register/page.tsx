@@ -36,10 +36,6 @@ export default function RegisterPage() {
     router.push("/login");
   };
 
-  const handleGoogle = async () => {
-    await authClient.signIn.social({ provider: "google", callbackURL: "/" });
-  };
-
   return (
     <section className="mx-auto w-full max-w-md px-4 py-12 md:py-16">
       <div className="rounded-3xl border border-white/55 bg-white/80 p-7 shadow-xl">
@@ -87,10 +83,6 @@ export default function RegisterPage() {
             {loading ? "Registering..." : "Register"}
           </button>
         </form>
-
-        <button className="btn mt-3 w-full btn-outline" onClick={handleGoogle}>
-          Continue with Google
-        </button>
 
         <p className="mt-5 text-center text-sm text-slate-600">
           Already have an account?{" "}
