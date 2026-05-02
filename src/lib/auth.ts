@@ -1,7 +1,13 @@
 import { betterAuth } from "better-auth";
 import Database from "better-sqlite3";
+import path from "path";
+import os from "os";
 
-const database = new Database("./skillsphere.db");
+const dbPath = process.env.NODE_ENV === "production"
+  ? path.join(os.tmpdir(), "skillsphere.db")
+  : "./skillsphere.db";
+
+const database = new Database(dbPath);
 
 export const auth = betterAuth({
   database,
