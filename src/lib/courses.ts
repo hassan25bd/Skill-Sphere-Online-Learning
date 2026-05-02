@@ -18,7 +18,8 @@ export const courses: Course[] = [
     duration: "20 hours",
     rating: 4.9,
     level: "Beginner",
-    description: "Learn full-stack web development from scratch with real-world projects.",
+    description:
+      "Covers HTML, CSS, JavaScript, React and a basic Node backend. Good starting point if you've never built a website before.",
     image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
     category: "Development",
   },
@@ -29,7 +30,8 @@ export const courses: Course[] = [
     duration: "14 hours",
     rating: 4.7,
     level: "Beginner",
-    description: "Master visual hierarchy, wireframing, and user-centered design principles.",
+    description:
+      "Learn how to wireframe, prototype, and think from a user's perspective. Figma is used throughout the course.",
     image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
     category: "Design",
   },
@@ -40,7 +42,8 @@ export const courses: Course[] = [
     duration: "18 hours",
     rating: 4.8,
     level: "Intermediate",
-    description: "Build data-driven marketing campaigns using SEO, content, and ads.",
+    description:
+      "SEO, paid ads, content strategy and email marketing all in one place. Practical and not overly theoretical.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
     category: "Marketing",
   },
@@ -51,7 +54,8 @@ export const courses: Course[] = [
     duration: "16 hours",
     rating: 4.6,
     level: "Intermediate",
-    description: "Analyze and visualize business data with SQL, dashboards, and reporting.",
+    description:
+      "Write real SQL queries, build dashboards in Power BI, and actually understand what the data is telling you.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
     category: "Analytics",
   },
@@ -62,7 +66,8 @@ export const courses: Course[] = [
     duration: "12 hours",
     rating: 4.5,
     level: "Advanced",
-    description: "Create high-impact animations and branded visuals for social platforms.",
+    description:
+      "After Effects fundamentals focused on social content — reels, intros, transitions. You'll need some video editing experience first.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     category: "Design",
   },
@@ -73,7 +78,8 @@ export const courses: Course[] = [
     duration: "15 hours",
     rating: 4.8,
     level: "Intermediate",
-    description: "Ship better products with user research, roadmap planning, and execution.",
+    description:
+      "How PMs actually work day to day — user research, writing specs, working with engineers, and prioritizing features without losing your mind.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
     category: "Business",
   },
