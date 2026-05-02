@@ -11,10 +11,26 @@ const learningTips = [
 ];
 
 const topInstructors = [
-  { name: "John Doe", specialty: "Web development (front + back)" },
-  { name: "Sarah Khan", specialty: "UX design & Figma" },
-  { name: "Alex Rivera", specialty: "Digital marketing" },
-  { name: "Priya Nair", specialty: "SQL & data analysis" },
+  {
+    name: "John Doe",
+    specialty: "Web development (front + back)",
+    avatar: "https://api.dicebear.com/9.x/personas/png?seed=JohnDoe&size=80",
+  },
+  {
+    name: "Sarah Khan",
+    specialty: "UX design & Figma",
+    avatar: "https://api.dicebear.com/9.x/personas/png?seed=SarahKhan&size=80",
+  },
+  {
+    name: "Alex Rivera",
+    specialty: "Digital marketing",
+    avatar: "https://api.dicebear.com/9.x/personas/png?seed=AlexRivera&size=80",
+  },
+  {
+    name: "Priya Nair",
+    specialty: "SQL & data analysis",
+    avatar: "https://api.dicebear.com/9.x/personas/png?seed=PriyaNair&size=80",
+  },
 ];
 
 export default function Home() {
@@ -56,7 +72,7 @@ export default function Home() {
               <div key={instructor.name} className="rounded-2xl border border-slate-200 bg-white p-4">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="https://i.postimg.cc/q7fM6Q8N/avatar.png"
+                    src={instructor.avatar}
                     alt={instructor.name}
                     width={44}
                     height={44}

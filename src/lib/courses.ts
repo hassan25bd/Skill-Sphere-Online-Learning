@@ -20,7 +20,7 @@ export const courses: Course[] = [
     level: "Beginner",
     description:
       "Covers HTML, CSS, JavaScript, React and a basic Node backend. Good starting point if you've never built a website before.",
-    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+    image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=800&q=80&fit=crop",
     category: "Development",
   },
   {
@@ -32,7 +32,7 @@ export const courses: Course[] = [
     level: "Beginner",
     description:
       "Learn how to wireframe, prototype, and think from a user's perspective. Figma is used throughout the course.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80&fit=crop",
     category: "Design",
   },
   {
@@ -44,7 +44,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "SEO, paid ads, content strategy and email marketing all in one place. Practical and not overly theoretical.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80&fit=crop",
     category: "Marketing",
   },
   {
@@ -56,7 +56,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "Write real SQL queries, build dashboards in Power BI, and actually understand what the data is telling you.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop",
     category: "Analytics",
   },
   {
@@ -68,7 +68,7 @@ export const courses: Course[] = [
     level: "Advanced",
     description:
       "After Effects fundamentals focused on social content — reels, intros, transitions. You'll need some video editing experience first.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&fit=crop",
     category: "Design",
   },
   {
@@ -80,7 +80,7 @@ export const courses: Course[] = [
     level: "Intermediate",
     description:
       "How PMs actually work day to day — user research, writing specs, working with engineers, and prioritizing features without losing your mind.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&fit=crop",
     category: "Business",
   },
 ];

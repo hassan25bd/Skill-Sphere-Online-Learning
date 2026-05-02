@@ -62,7 +62,7 @@ export function Navbar() {
           ) : session?.user ? (
             <>
               <Image
-                src={session.user.image || "https://i.postimg.cc/q7fM6Q8N/avatar.png"}
+                src={session.user.image || `https://api.dicebear.com/9.x/personas/png?seed=${encodeURIComponent(session.user.email)}&size=36`}
                 alt={session.user.name || "User"}
                 width={36}
                 height={36}

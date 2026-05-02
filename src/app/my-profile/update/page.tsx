@@ -1,14 +1,23 @@
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { authClient } from "@/lib/auth-client";
+import { Loader } from "@/components/loader";
 import { UpdateProfileForm } from "./update-profile-form";
 
-export default async function UpdateProfilePage() {
-  const session = await auth.api.getSession({ headers: await headers() });
+export default function UpdateProfilePage() {
+  const router = useRouter();
+  const { data: session, isPending } = authClient.useSession();
 
-  if (!session?.user) {
-    redirect("/login?redirect=/my-profile/update");
-  }
+  useEffect(() => {
+    if (!isPending && !session?.user) {
+      router.push("/login?redirect=/my-profile/update");
+    }
+  }, [session, isPending, router]);
+
+  if (isPending) return <Loader label="Loading..." />;
+  if (!session?.user) return <Loader label="Redirecting..." />;
 
   return (
     <section className="mx-auto w-full max-w-md px-4 py-12 md:py-16">
@@ -17,7 +26,10 @@ export default async function UpdateProfilePage() {
         <p className="mt-2 text-sm text-slate-600">Keep your learner profile up to date.</p>
         <UpdateProfileForm
           defaultName={session.user.name || ""}
-          defaultImage={session.user.image || "https://i.postimg.cc/q7fM6Q8N/avatar.png"}
+          defaultImage={
+            session.user.image ||
+            `https://api.dicebear.com/9.x/personas/png?seed=${encodeURIComponent(session.user.email)}&size=96`
+          }
         />
       </div>
     </section>
