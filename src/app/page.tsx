@@ -46,8 +46,8 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {popularCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {popularCourses.map((course, i) => (
+            <CourseCard key={course.id} course={course} index={i} />
           ))}
         </div>
       </section>
@@ -93,8 +93,8 @@ export default function Home() {
         <h2 className="font-display text-3xl font-bold text-slate-900">Trending this week</h2>
         <p className="mt-2 text-slate-600">Courses people are picking up lately.</p>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {trendingCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+          {trendingCourses.map((course, i) => (
+            <CourseCard key={course.id} course={course} index={i} />
           ))}
         </div>
       </section>

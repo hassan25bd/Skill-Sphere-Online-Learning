@@ -55,8 +55,8 @@ export default function CoursesPage() {
             Showing {filteredCourses.length} of {courses.length} courses.
           </p>
           <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredCourses.map((course) => (
-              <CourseCard key={course.id} course={course} />
+            {filteredCourses.map((course, i) => (
+              <CourseCard key={course.id} course={course} index={i} />
             ))}
           </div>
         </>

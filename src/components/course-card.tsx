@@ -1,10 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import type { Course } from "@/lib/courses";
 
-export function CourseCard({ course }: { course: Course }) {
+export function CourseCard({ course, index = 0 }: { course: Course; index?: number }) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/60 bg-white/75 shadow-lg shadow-sky-900/5 transition hover:-translate-y-1 hover:shadow-xl">
+    <motion.article
+      className="group overflow-hidden rounded-2xl border border-white/60 bg-white/75 shadow-lg shadow-sky-900/5 transition hover:-translate-y-1 hover:shadow-xl"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
+      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+    >
       <div className="relative h-48 w-full">
         <Image src={course.image} alt={course.title} fill className="object-cover" />
       </div>
@@ -21,6 +31,6 @@ export function CourseCard({ course }: { course: Course }) {
           </Link>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
